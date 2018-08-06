@@ -175,41 +175,41 @@ public class AssetImporter : MonoBehaviour {
 
     #region wrapper
 
-    [DllImport("ObjMan 7", EntryPoint = "Create", CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("ObjMan", EntryPoint = "Create", CallingConvention = CallingConvention.Cdecl)]
     public static extern int Create(StringBuilder str);
 
-    [DllImport("ObjMan 7", EntryPoint = "GetModelVertexCount")]
+    [DllImport("ObjMan", EntryPoint = "GetModelVertexCount")]
     public static extern int GetModelVertexCount(int modelPointer);
 
-    [DllImport("ObjMan 7", EntryPoint = "GetModelTexCoordCount")]
+    [DllImport("ObjMan", EntryPoint = "GetModelTexCoordCount")]
     public static extern int GetModelTexCoordCount(int modelPointer);
 
-    [DllImport("ObjMan 7", EntryPoint = "GetModelNormalCount")]
+    [DllImport("ObjMan", EntryPoint = "GetModelNormalCount")]
     public static extern int GetModelNormalCount(int modelPointer);
 
-    [DllImport("ObjMan 7", EntryPoint = "GetModelFaceCount")]
+    [DllImport("ObjMan", EntryPoint = "GetModelFaceCount")]
     public static extern int GetModelFaceCount(int modelPointer);
 
-    [DllImport("ObjMan 7", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("ObjMan", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
     static unsafe extern bool GetVertices(out ItemsSafeHandle itemsHandle,
         out float* items, out int itemCount);
 
-    [DllImport("ObjMan 7", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("ObjMan", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
     static unsafe extern bool GetNormals(out ItemsSafeHandle itemsHandle,
         out float* items, out int itemCount);
 
-    [DllImport("ObjMan 7", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("ObjMan", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
     static unsafe extern bool GetTextureCoordinates(out ItemsSafeHandle itemsHandle,
         out float* items, out int itemCount);
 
-    [DllImport("ObjMan 7", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("ObjMan", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
     static unsafe extern bool GetFaceValues(out ItemsSafeHandle itemsHandle,
         out ushort* items, StringBuilder str, out int faceCount);
 
-    [DllImport("ObjMan 7")]
+    [DllImport("ObjMan")]
     private static extern void GetFaceKeys(IntPtr inArr);
 
-    [DllImport("ObjMan 7", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
+    [DllImport("ObjMan", ExactSpelling = true, CallingConvention = CallingConvention.Cdecl)]
     static unsafe extern bool ReleaseItems(IntPtr itemsHandle);
 
     static unsafe ItemsSafeHandle GenerateItemsWrapper(out float* items, out int itemsCount, DataType dataType)
