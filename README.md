@@ -12,4 +12,4 @@ functions in Assets/_AssetView/Scripts/AssetImporter.cs.
 Currently, the models are downloaded from a NodeJS server set up on Heroku.
 
 ## Platform
-This currently works only on PC. 
+This currently works only on PC.  
